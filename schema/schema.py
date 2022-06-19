@@ -22,7 +22,6 @@ class Query(graphene.ObjectType):
         print(root,info,id)
         return Blog.objects.get(pk=id)
     def resolve_tag_recommend(root,info,Tag):
-        print(Tag)
         return Blog.objects.filter(tag=Tag)
     def resolve_projects(root,info):
         return Project.objects.all()
